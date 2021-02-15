@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History Account
+{% endblock %}
+
+{% block main %}
+
+    <div class = "table">
+    <table class= "main_table">
+        <thead>
+            <tr>
+                <th> Symbol</th>
+                <th> Name</th>
+                <th> Shares</th>
+                <th> Price</th>
+                <th> Transacted</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for transaction in transactions %}
+
+            <tr>
+                <td id="symbol"> {{transaction.symbol}}</td>
+                <td> {{transaction.name}}</td>
+                <td> {{transaction.shares}}</td>
+                <td> {{transaction.price | usd}}</td>
+                <td> {{transaction.transac_d}}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+    <table class="summarise">
+
+    </table>
+
+    </div>
+
+
+{% endblock%}

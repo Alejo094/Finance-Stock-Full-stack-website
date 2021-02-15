@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted stock
+{% endblock %}
+
+
+{% block main %}
+
+
+    <div class ="form-group">
+        <p class="share_price"> A share of {{stock_info["name"]}} ({{stock_info["symbol"]}}) costs {{stock_info["price"] | usd}}</p>
+    </div>
+
+
+{% endblock %}

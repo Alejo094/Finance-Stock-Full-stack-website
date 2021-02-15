@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy Stock
+{% endblock %}
+
+{% block main %}
+    <div class = "table">
+    <table class= "main_table">
+        <thead>
+            <tr>
+                <th> Symbol</th>
+                <th> Name</th>
+                <th> Shares</th>
+                <th> Price</th>
+                <th> TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for users_cash_track_table in users_cash_track_table %}
+
+            <tr>
+                <td id="symbol"> {{users_cash_track_table.symbol}}</td>
+                <td> {{users_cash_track_table.name}}</td>
+                <td> {{users_cash_track_table.totalShares}}</td>
+                <td> {{users_cash_track_table.price | usd}}</td>
+                <td> {{users_cash_track_table.totalbought | usd}}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <table class="summarise">
+
+        <tr>
+            <td> TOTAL MONEY INVESTED</td>
+             <td>{{x[0]["stock_boug"] | usd}}</td>
+        </tr>
+
+        <tr>
+            <td> CASH NOT INVESTED</td>
+             <td >{{cash_left[0]["cash"] | usd}}</td>
+        </tr>
+        <tr>
+            <td> TOTAL MONEY IN ACCOUNT </td>
+            <td > {{y[0]["money_accout"]|usd}}</td>
+        </tr>
+    </table>
+
+    </div>
+
+{% endblock %}
+
+
